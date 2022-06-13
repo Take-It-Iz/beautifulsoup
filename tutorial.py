@@ -8,6 +8,7 @@ the best option is to install in the currently selected/virtual environment
 pip install requests
 pip install lxml
 """
+
 import requests
 from bs4 import BeautifulSoup as bs
 import re

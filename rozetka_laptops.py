@@ -1,3 +1,9 @@
+# ////////////////////////////////////////////////////// #
+# PARSING LAPTOPS PAGE ON https://rozetka.com.ua/ AND    #
+# RETRIEVING LAPTOP TITLE, PRICE AND LINK                #
+# THE RESULT DATA HAS TO BE STORED IN JSON AND CSV FILES #
+# ////////////////////////////////////////////////////// #
+
 import os
 import requests
 from bs4 import BeautifulSoup as bs
