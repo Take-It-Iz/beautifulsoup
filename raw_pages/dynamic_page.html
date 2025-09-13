@@ -1,0 +1,904 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<link href="https://cdn.realpython.com" rel="preconnect">
+<link href="https://files.realpython.com" rel="preconnect">
+<title>Python Tutorials – Real Python</title>
+<meta name="author" content="Real Python">
+<meta name="description" content="Learn Python online: Python tutorials for developers of all skill levels, Python books and courses, Python news, code examples, articles, and more.">
+<meta name="keywords" content="">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+<link rel="stylesheet" href="https://cdn.realpython.com/static/realpython.min.6f017403b980.css">
+<link rel="stylesheet" href="https://cdn.realpython.com/static/gfonts/font.5ac42994de49.css">
+<link rel="preload" href="https://cdn.realpython.com/static/glightbox.min.f69035b3cab2.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.realpython.com/static/glightbox.min.f69035b3cab2.css"></noscript>
+<link rel="canonical" href="https://realpython.com/">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:image" content="https://cdn.realpython.com/static/social-default-image.5e1aa4786b3a.png">
+<meta property="og:image" content="https://cdn.realpython.com/static/social-default-image.5e1aa4786b3a.png">
+<meta name="twitter:creator" content="@realpython">
+<meta name="twitter:site" content="@realpython">
+<meta property="og:title" content="Python Tutorials – Real Python">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://realpython.com/">
+<meta property="og:description" content="Learn Python online: Python tutorials for developers of all skill levels, Python books and courses, Python news, code examples, articles, and more.">
+<link href="https://cdn.realpython.com/static/favicon.68cbf4197b0c.png" rel="icon">
+<link href="https://realpython.com/atom.xml" rel="alternate" title="Real Python" type="application/atom+xml">
+<link rel="manifest" href="/manifest.json">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35184939-1', 'auto', {'allowLinker': true});
+
+  
+
+  
+
+  
+  
+  ga('set', {
+    dimension1: false,
+    dimension2: false
+  });
+  
+
+  ga('send', 'pageview');
+  
+</script>
+<script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js?ts=1655899200'></script></head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark flex-column ">
+<div class="container flex-row">
+<a class="navbar-brand" href="/">
+<img src="https://cdn.realpython.com/static/real-python-logo.893c30edea53.svg" width="165" height="40" class="d-inline-block align-top" alt="Real Python">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse navbar-nav-scroll" id="navbarSupportedContent" role="navigation" aria-label="Main Navigation">
+<ul class="navbar-nav mr-2">
+<li class="nav-item">
+<a class="nav-link" href="/start-here/">Start&nbsp;Here</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLibrary" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="fa fa-graduation-cap" aria-hidden="true"></span> Learn Python
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownLibrary">
+<a class="dropdown-item" href="/search?kind=article&kind=course&order=newest" style="color: #ff7e73; line-height: 110%;"><i class="fa fa-fw mr-1 fa-graduation-cap" aria-hidden="true"></i> Python Tutorials →<br><small class="text-secondary">In-depth articles and video courses</small></a>
+<a class="dropdown-item" href="/learning-paths/" style="color: #ffc873; line-height: 110%;"><i class="fa fa-fw mr-1 fa-map-o" aria-hidden="true"></i> Learning Paths →<br><small class="text-secondary">Guided study plans for accelerated learning</small></a>
+<a class="dropdown-item" href="/quizzes/" style="color: #abe0e5; line-height: 110%;"><i class="fa fa-fw mr-1 fa-trophy" aria-hidden="true"></i> Quizzes →<br><small class="text-secondary">Check your learning progress</small></a>
+<a class="dropdown-item" href="/tutorials/all/" style="color: #ccc; line-height: 110%;"><i class="fa fa-fw mr-1 fa-tags" aria-hidden="true"></i> Browse Topics →<br><small class="text-secondary">Focus on a specific area or skill level</small></a>
+<a class="dropdown-item" href="/community/" style="color: #e5c6ab; line-height: 110%;"><i class="fa fa-fw mr-1 fa-slack" aria-hidden="true"></i> Community Chat →<br><small class="text-secondary">Learn with other Pythonistas</small></a>
+<a class="dropdown-item" href="/office-hours/" style="color: #e5c6ab; line-height: 110%;"><i class="fa fa-fw mr-1 fa-users" aria-hidden="true"></i> Office Hours →<br><small class="text-secondary">Live Q&A calls with Python experts</small></a>
+<a class="dropdown-item" href="/podcasts/rpp/" style="color: #b8abe5; line-height: 110%;"><i class="fa fa-fw mr-1 fa-podcast" aria-hidden="true"></i> Podcast →<br><small class="text-secondary">Hear what’s new in the world of Python</small></a>
+<a class="dropdown-item pb-3" href="/products/books/" style="color: #abe5b1; line-height: 110%;"><i class="fa fa-fw mr-1 fa-book" aria-hidden="true"></i> Books →<br><small class="text-secondary">Round out your knowledge and learn offline</small></a>
+<a class="dropdown-item border-top text-warning" href="/account/join/"><i class="fa fa-fw fa-star text-warning" aria-hidden="true"></i> Unlock All Content →</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMore" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+More
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMore">
+<a class="dropdown-item" href="/products/">Python Learning Resources</a>
+<a class="dropdown-item" href="/newsletter/">Python Newsletter</a>
+<a class="dropdown-item" href="https://www.pythonjobshq.com" target="_blank">Python Job Board</a>
+<a class="dropdown-item" href="/team/">Meet the Team</a>
+<a class="dropdown-item" href="/write-for-us/">Become a Tutorial Author</a>
+<a class="dropdown-item" href="/become-an-instructor/">Become a Video Instructor</a>
+</div>
+</li>
+</ul>
+<div class="d-block d-lg-none">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="/search" title="Search"><span class="d-block d-lg-none"><i class="fa fa-search" aria-hidden="true"></i> Search</span><span class="d-none d-lg-block"><i class="fa fa-search" aria-hidden="true"></i></span></a>
+</li>
+</ul>
+</div>
+<div class="d-none d-lg-flex align-items-center mr-2 flex-fill">
+<form class="form-inline w-100" action="/search" method="GET">
+<a class="js-search-form-submit position-absolute" href="/search" title="Search"><i class="fa fa-search fa-fw text-muted pl-2" aria-hidden="true"></i></a>
+<input class="search-field form-control form-control-md mr-sm-1 mr-lg-2 w-100" style="padding-left: 2rem;" maxlength=50 type="search" placeholder="Search" aria-label="Search" name="q">
+<input type="hidden" name="_from" value="nav">
+</form>
+</div>
+<ul class="navbar-nav ml-auto">
+<li class="nav-item form-inline">
+<a class="ml-2 ml-lg-0 btn btn-sm btn-primary px-3" href="/account/join/">Join</a>
+</li>
+<li class="nav-item">
+<a class="btn text-light" href="/account/login/?next=%2F%3Fauthority%3Dwww.google-analytics.com%26method%3DPOST%26path%3D%252Fj%252Fcollect%253Fv%253D1%2526_v%253Dj96%2526a%253D2065656292%2526t%253Dpageview%2526_s%253D1%2526dl%253Dhttps%25253A%25252F%25252Frealpython.com%25252F%2526ul%253Dru-ru%2526de%253DUTF-8%2526dt%253DPython%252520Tutorials%252520%2525E2%252580%252593%252520Real%252520Python%2526sd%253D24-bit%2526sr%253D1536x864%2526vp%253D366x714%2526je%253D0%2526_u%253DQACAAEABAAAAAC~%2526jid%253D516262858%2526gjid%253D1364967528%2526cid%253D1133214904.1650799092%2526tid%253DUA-35184939-1%2526_gid%253D1284672569.1655909720%2526_r%253D1%2526_slc%253D1%2526cd1%253D1%2526cd2%253D0%2526z%253D1957463574%26scheme%3Dhttps%26accept%3D%252A%252F%252A%26accept-encoding%3Dgzip%252C%2Bdeflate%252C%2Bbr%26accept-language%3Dru-RU%252Cru%253Bq%253D0.9%252Cen-US%253Bq%253D0.8%252Cen%253Bq%253D0.7%26content-length%3D0%26content-type%3Dtext%252Fplain%26origin%3Dhttps%253A%252F%252Frealpython.com%26referer%3Dhttps%253A%252F%252Frealpython.com%252F%26sec-ch-ua%3D%2522%2BNot%2BA%253BBrand%2522%253Bv%253D%252299%2522%252C%2B%2522Chromium%2522%253Bv%253D%2522102%2522%252C%2B%2522Google%2BChrome%2522%253Bv%253D%2522102%2522%26sec-ch-ua-mobile%3D%253F0%26sec-ch-ua-platform%3DWindows%26sec-fetch-dest%3Dempty%26sec-fetch-mode%3Dcors%26sec-fetch-site%3Dcross-site%26user-agent%3DMozilla%252F5.0%2B%2528Windows%2BNT%2B10.0%253B%2BWin64%253B%2Bx64%2529%2BAppleWebKit%252F537.36%2B%2528KHTML%252C%2Blike%2BGecko%2529%2BChrome%252F102.0.0.0%2BSafari%252F537.36">Sign&#8209;In</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container main-content">
+<div class="row">
+<div class="col-md-12 col-lg-8">
+<div class="row">
+<div class="col-12">
+<h1 class="mb-2 display-3">Real Python Tutorials</h1>
+</div>
+<div class="col-12 mb-3">
+<div class="card border-0">
+<a href="/pytest-python-testing/">
+<div class="embed-responsive embed-responsive-16by9">
+<img class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" src="https://files.realpython.com/media/Intermediate-Advanced-PyTest-Features_Watermarked.43fb169e7121.jpg" alt="Effective Python Testing With Pytest" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Intermediate-Advanced-PyTest-Features_Watermarked.43fb169e7121.jpg&amp;w=480&amp;sig=77bd8140beedaf348534566ca012b103614062cd 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Intermediate-Advanced-PyTest-Features_Watermarked.43fb169e7121.jpg&amp;w=960&amp;sig=17ecca1293ec9e0e1b0fb625201244636b3449fa 960w, https://files.realpython.com/media/Intermediate-Advanced-PyTest-Features_Watermarked.43fb169e7121.jpg 1920w" sizes="50vw">
+<div class="shadow-sm p-0 bg-dark rounded-left border-left border-top border-bottom border-light text-center d-flex align-items-center justify-content-center" style="position:absolute; top:1em; right:0; width: 5em; height: 2em; ">
+<span class="text-light m-0 p-0">NEW</span>
+</div>
+</div>
+</a>
+<div class="card-body m-0 p-0 pt-3">
+<a href="/pytest-python-testing/">
+<h2 class="card-title h2 my-0 py-0">Effective Python Testing With Pytest</h2>
+</a>
+<p class="my-1">In this tutorial, you&#x27;ll learn how to take your testing to the next level with pytest. You&#x27;ll cover intermediate and advanced pytest features such as fixtures, marks, parameters, and plugins. With pytest, you can make your test suites fast, effective, and less painful to maintain.</p>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 22, 2022</span>
+<span class="ml-2 fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+<a href="/tutorials/testing/" class="badge badge-light text-muted">testing</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-4">
+<div class="row">
+<div class="col-12">
+<div class="card mb-3 bg-secondary">
+<form class="card-body" action="/optins/process/" method="post">
+<div class="form-group">
+<p class="h5 text-muted text-center">— FREE Email Series —</p>
+<p class="h3 text-center">🐍 Python Tricks 💌</p>
+<p><img class="img-fluid rounded" src="https://cdn.realpython.com/static/pytrick-dict-merge.4201a0125a5e.png" width="738" height="490" alt="Python Tricks Dictionary Merge"></p>
+</div>
+<div class="form-group">
+<input type="hidden" name="csrfmiddlewaretoken" value="KhHJ6FTf1kbTTWuV3oeWsZVoqvEy89dnqWjaI4ahBeJ7OEtxzO891tMWLvdwMxrq">
+<input type="hidden" name="slug" value="static-python-tricks-sidebar">
+<input type="email" class="form-control form-control-md" name="email" placeholder="Email&hellip;" required>
+</div>
+<button type="submit" name="submit" class="btn btn-primary btn-md btn-block">Get Python Tricks »</button>
+<p class="mb-0 mt-2 text-muted text-center">🔒 No spam. Unsubscribe any time.</p>
+</form>
+</div>
+</div>
+<div class="col-12">
+<div class="sidebar-module sidebar-module-inset border">
+<p class="h4"><a class="link-unstyled" href="/tutorials/all/">All Tutorial Topics</a></p>
+<a href="/tutorials/advanced/" class="badge badge-light text-muted">advanced</a>
+<a href="/tutorials/api/" class="badge badge-light text-muted">api</a>
+<a href="/tutorials/basics/" class="badge badge-light text-muted">basics</a>
+<a href="/tutorials/best-practices/" class="badge badge-light text-muted">best-practices</a>
+<a href="/tutorials/community/" class="badge badge-light text-muted">community</a>
+<a href="/tutorials/databases/" class="badge badge-light text-muted">databases</a>
+<a href="/tutorials/data-science/" class="badge badge-light text-muted">data-science</a>
+<a href="/tutorials/devops/" class="badge badge-light text-muted">devops</a>
+<a href="/tutorials/django/" class="badge badge-light text-muted">django</a>
+<a href="/tutorials/docker/" class="badge badge-light text-muted">docker</a>
+<a href="/tutorials/flask/" class="badge badge-light text-muted">flask</a>
+<a href="/tutorials/front-end/" class="badge badge-light text-muted">front-end</a>
+<a href="/tutorials/gamedev/" class="badge badge-light text-muted">gamedev</a>
+<a href="/tutorials/gui/" class="badge badge-light text-muted">gui</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/machine-learning/" class="badge badge-light text-muted">machine-learning</a>
+<a href="/tutorials/projects/" class="badge badge-light text-muted">projects</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+<a href="/tutorials/testing/" class="badge badge-light text-muted">testing</a>
+<a href="/tutorials/tools/" class="badge badge-light text-muted">tools</a>
+ <a href="/tutorials/web-dev/" class="badge badge-light text-muted">web-dev</a>
+<a href="/tutorials/web-scraping/" class="badge badge-light text-muted">web-scraping</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 mt-4">
+<div class="d-flex justify-content-between align-items-center w-100 mt-0 mb-2">
+<h2 class="my-0">Explore Real Python</h2>
+</div>
+<div class="card-deck mb-3 pl-md-3 pl-sm-3">
+<div class="card bg-dark border-0 ml-0 mr-md-3">
+<div class="card-body text-center highlight-hover-dark rounded">
+<a class="btn stretched-link" href="/learning-paths/" style="color: #ffc873; line-height: 110%;"><i class="fa fa-fw mr-1 fa-map-o"></i>Learning Paths<br><small class="text-secondary">Guided study plans for accelerated learning</small></a>
+</div>
+</div>
+<div class="card bg-dark border-0 ml-0 mr-md-3">
+<div class="card-body text-center highlight-hover-dark rounded">
+<a class="btn stretched-link" href="/search?kind=article&kind=course&order=newest" style="color: #ff7e73; line-height: 110%;"><i class="fa fa-fw mr-1 fa-graduation-cap"></i>Python Tutorials<br><small class="text-secondary">In-depth articles and step-by-step video courses</small></a>
+</div>
+</div>
+<div class="w-100 mb-3 d-none d-sm-block d-lg-none"></div>
+<div class="card bg-dark border-0 ml-0 mr-md-3">
+<div class="card-body text-center highlight-hover-dark rounded">
+<a class="btn stretched-link" href="/quizzes/" style="color: #abe0e5; line-height: 110%;"><i class="fa fa-fw mr-1 fa-trophy"></i>Quizzes<br><small class="text-secondary">Check your learning progress</small></a>
+</div>
+</div>
+<div class="card bg-dark border-0 ml-0 mr-md-3">
+<div class="card-body text-center highlight-hover-dark rounded">
+<a class="btn stretched-link" href="/tutorials/all/" style="color: #ccc; line-height: 110%;"><i class="fa fa-fw mr-1 fa-tags"></i>Browse Topics<br><small class="text-secondary">Focus on a specific area or skill level</small></a>
+</div>
+</div>
+<div class="w-100 mb-3 d-none d-sm-block d-lg-none"></div>
+<div class="w-100 mb-3 d-none d-lg-block"></div>
+<div class="card bg-dark border-0 ml-0 mr-md-3">
+<div class="card-body text-center highlight-hover-dark rounded">
+<a class="btn stretched-link" href="/community/" style="color: #e5c6ab; line-height: 110%;"><i class="fa fa-fw mr-1 fa-slack"></i>Community Chat<br><small class="text-secondary">Learn with other Pythonistas</small></a>
+</div>
+</div>
+<div class="card bg-dark border-0 ml-0 mr-md-3">
+<div class="card-body text-center highlight-hover-dark rounded">
+<a class="btn stretched-link" href="/office-hours/" style="color: #e5c6ab; line-height: 110%;"><i class="fa fa-fw mr-1 fa-users"></i>Office Hours<br><small class="text-secondary">Live Q&A calls with an expert from the Real Python Team</small></a>
+</div>
+</div>
+<div class="w-100 mb-3 d-none d-sm-block d-lg-none"></div>
+<div class="card bg-dark border-0 ml-0 mr-md-3">
+<div class="card-body text-center highlight-hover-dark rounded">
+<a class="btn stretched-link" href="/podcasts/rpp/" style="color: #b8abe5; line-height: 110%;"><i class="fa fa-fw mr-1 fa-podcast"></i>Podcast<br><small class="text-secondary">Hear what’s new in the world of Python programming</small></a>
+</div>
+</div>
+<div class="card bg-dark border-0 ml-0 mr-md-3">
+<div class="card-body text-center highlight-hover-dark rounded">
+<a class="btn stretched-link" href="/products/books/" style="color: #abe5b1; line-height: 110%;"><i class="fa fa-fw mr-1 fa-book"></i>Books<br><small class="text-secondary">Round out your knowledge and learn offline</small></a>
+</div>
+</div>
+</div>
+<div class="d-flex mb-5">
+<form class="form-inline col p-0" action="/search" method="GET" id="home-search-form">
+<a class="js-search-form-submit position-absolute" href="/search" title="Search"><i class="fa fa-search fa-fw text-muted pl-2" aria-hidden="true"></i></a>
+<input class="form-control form-control-lg w-100" style="padding-left: 2rem;" maxlength=50 type="search" placeholder="Search Tutorials, Courses, Quizzes, Learning Paths&hellip;" aria-label="Search" name="q">
+<input type="hidden" name="_from" value="home">
+</form>
+<button class="ml-3 btn btn-primary col-3 d-none d-lg-block" style="max-width: 250px;" type="submit" form="home-search-form">Search&nbsp;»</button>
+</div>
+<div class="d-flex justify-content-between align-items-center w-100 mt-0 mb-2">
+<h2 class="my-0"><a href="/search?order=newest" class="text-body">New Releases</a></h2>
+<a href="/search?order=newest" class="btn btn-secondary btn-sm">View&nbsp;All&nbsp;»</a>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/courses/python-mmap-io/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Python mmap: Improved File I/O With Memory Mapping" src="https://files.realpython.com/media/Using-mmap-Library_Watermarked.3e331f6bcc1d.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Using-mmap-Library_Watermarked.3e331f6bcc1d.jpg&amp;w=480&amp;sig=c538c8dff2469a3ff18959223248972c0a75dabc 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Using-mmap-Library_Watermarked.3e331f6bcc1d.jpg&amp;w=960&amp;sig=297d608fd206e990bfff84ee3e7e08dd34ac4668 960w, https://files.realpython.com/media/Using-mmap-Library_Watermarked.3e331f6bcc1d.jpg 1920w" sizes="25vw">
+<div class="card-img-overlay d-flex align-items-center">
+<div class="mx-auto">
+<span class="text-light" style="opacity: 0.90;"><i class="fa fa-4x fa-play " aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/courses/python-mmap-io/">
+<h2 class="card-title h4 my-0 py-0">Python mmap: Doing File I/O With Memory Mapping</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 21, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/python-do-while/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="How Can You Emulate Do-While Loops in Python?" src="https://files.realpython.com/media/Emulating-a-do-while-Loop-in-Python_Watermarked.80ad40007b07.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Emulating-a-do-while-Loop-in-Python_Watermarked.80ad40007b07.jpg&amp;w=480&amp;sig=558e1cd34c27bce61b757d3ea3106936bd65ea66 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Emulating-a-do-while-Loop-in-Python_Watermarked.80ad40007b07.jpg&amp;w=960&amp;sig=f9230a008447623cd3903383fcae1bc4eed28c86 960w, https://files.realpython.com/media/Emulating-a-do-while-Loop-in-Python_Watermarked.80ad40007b07.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/python-do-while/">
+<h2 class="card-title h4 my-0 py-0">How Can You Emulate Do-While Loops in Python?</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 20, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/basics/" class="badge badge-light text-muted">basics</a>
+ <a href="/tutorials/best-practices/" class="badge badge-light text-muted">best-practices</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/python-project-documentation-with-mkdocs/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Build Your Python Project Documentation With MkDocs" src="https://files.realpython.com/media/Build-Your-Python-Project-Documentation-With-MkDocs_Watermarked.5a882c215e55.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Build-Your-Python-Project-Documentation-With-MkDocs_Watermarked.5a882c215e55.jpg&amp;w=480&amp;sig=b67710e658df4d3805a1d03fc62cd887a18ea64b 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Build-Your-Python-Project-Documentation-With-MkDocs_Watermarked.5a882c215e55.jpg&amp;w=960&amp;sig=2d3c25e9b0c0ad3ce7396e2cb28105f70d8bc2c9 960w, https://files.realpython.com/media/Build-Your-Python-Project-Documentation-With-MkDocs_Watermarked.5a882c215e55.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/python-project-documentation-with-mkdocs/">
+<h2 class="card-title h4 my-0 py-0">Build Your Python Project Documentation With MkDocs</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 15, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/basics/" class="badge badge-light text-muted">basics</a>
+<a href="/tutorials/projects/" class="badge badge-light text-muted">projects</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/courses/data-pandas-concat-and-merge/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Combining Data in Pandas With merge(), .join(), and concat()" src="https://files.realpython.com/media/Merging-Joining-and-Concatenating-in-Pandas_Watermarked_1.e45698a508a4.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Merging-Joining-and-Concatenating-in-Pandas_Watermarked_1.e45698a508a4.jpg&amp;w=480&amp;sig=eab501e387d2d3b7dabb79af5fed91c82f9203f6 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Merging-Joining-and-Concatenating-in-Pandas_Watermarked_1.e45698a508a4.jpg&amp;w=960&amp;sig=d735f94e96379570fd4ad37a3dfc41974e3d17c3 960w, https://files.realpython.com/media/Merging-Joining-and-Concatenating-in-Pandas_Watermarked_1.e45698a508a4.jpg 1920w" sizes="25vw">
+<div class="card-img-overlay d-flex align-items-center">
+<div class="mx-auto">
+<span class="text-light" style="opacity: 0.90;"><i class="fa fa-4x fa-play " aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/courses/data-pandas-concat-and-merge/">
+<h2 class="card-title h4 my-0 py-0">Combining Data in pandas With concat() and merge()</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 14, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/data-science/" class="badge badge-light text-muted">data-science</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/python-subprocess/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="The subprocess Module: Wrapping Program With Python" src="https://files.realpython.com/media/Subprocess_Watermarked.6d0e6a5d7d77.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Subprocess_Watermarked.6d0e6a5d7d77.jpg&amp;w=480&amp;sig=83ea30d3646b14d689f770eb71e174092cf2c373 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Subprocess_Watermarked.6d0e6a5d7d77.jpg&amp;w=960&amp;sig=26cb263e2f347a6eaa80e994c5c9cfc8554196a4 960w, https://files.realpython.com/media/Subprocess_Watermarked.6d0e6a5d7d77.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/python-subprocess/">
+<h2 class="card-title h4 my-0 py-0">The subprocess Module: Wrapping Programs With Python</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 13, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/python-quiz-application/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Build a Quiz Application With Python" src="https://files.realpython.com/media/Build-a-Quiz-Application_Watermarked.373436013115.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Build-a-Quiz-Application_Watermarked.373436013115.jpg&amp;w=480&amp;sig=2fb00f5f93b1ee2520059744d4c51312f0e30ac7 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Build-a-Quiz-Application_Watermarked.373436013115.jpg&amp;w=960&amp;sig=c3c80f3fc0a2e7f9338481d5921876366e7930aa 960w, https://files.realpython.com/media/Build-a-Quiz-Application_Watermarked.373436013115.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/python-quiz-application/">
+<h2 class="card-title h4 my-0 py-0">Build a Quiz Application With Python</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 08, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/basics/" class="badge badge-light text-muted">basics</a>
+<a href="/tutorials/projects/" class="badge badge-light text-muted">projects</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12">
+<div class="col-12 rounded p-0 w-100 mt-2 mb-4" style="overflow:hidden;">
+<div style="display:block;position:relative;">
+<div style="display:block;width:100%;padding-top:12.5%;"></div>
+<div class="rpad rounded border" data-unit="8x1" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;"></div>
+</div>
+<a class="small text-muted" href="/account/join/" rel="nofollow"> <i class="fa fa-info-circle" aria-hidden="true"> </i> Remove ads</a>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/courses/interview-practice-python-function/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Real Python Code Conversations" src="https://files.realpython.com/media/Double_Watermarked.d352a956db7a.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Double_Watermarked.d352a956db7a.jpg&amp;w=480&amp;sig=0a3eeff74726fe8290868b189d6e08c9171fed2f 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Double_Watermarked.d352a956db7a.jpg&amp;w=960&amp;sig=9c730a3d4ba6daafb92183e2a7f5d50eab98f2b2 960w, https://files.realpython.com/media/Double_Watermarked.d352a956db7a.jpg 1920w" sizes="25vw">
+<div class="card-img-overlay d-flex align-items-center">
+<div class="mx-auto">
+<span class="text-light" style="opacity: 0.90;"><i class="fa fa-4x fa-play " aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/courses/interview-practice-python-function/">
+<h2 class="card-title h4 my-0 py-0">Write and Test a Python Function: Interview Practice</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 07, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/testing/" class="badge badge-light text-muted">testing</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/pyscript-python-in-browser/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="A First Look at PyScript: Python in the Web Browser" src="https://files.realpython.com/media/PyScript_Watermarked.f91b33f963a1.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/PyScript_Watermarked.f91b33f963a1.jpg&amp;w=480&amp;sig=1af4b3dc552784e859210e48d61120ec18550dba 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/PyScript_Watermarked.f91b33f963a1.jpg&amp;w=960&amp;sig=2be11e8dc90c17ad0f7204af259e3886c722cb17 960w, https://files.realpython.com/media/PyScript_Watermarked.f91b33f963a1.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/pyscript-python-in-browser/">
+<h2 class="card-title h4 my-0 py-0">A First Look at PyScript: Python in the Web Browser</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 06, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/data-science/" class="badge badge-light text-muted">data-science</a>
+<a href="/tutorials/front-end/" class="badge badge-light text-muted">front-end</a>
+<a href="/tutorials/gui/" class="badge badge-light text-muted">gui</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/web-dev/" class="badge badge-light text-muted">web-dev</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/python-lbyl-vs-eafp/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="LBYL vs EAFP: Preventing or Handling Errors in Python" src="https://files.realpython.com/media/LBYL-vs-EAPF-in-Python_Watermarked.9dea6e043766.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/LBYL-vs-EAPF-in-Python_Watermarked.9dea6e043766.jpg&amp;w=480&amp;sig=a5ad333a02103b66a6aadc1d569f7567c68dd780 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/LBYL-vs-EAPF-in-Python_Watermarked.9dea6e043766.jpg&amp;w=960&amp;sig=d4cee91dbf11ceafb5726b574f09fbcc212bd3c5 960w, https://files.realpython.com/media/LBYL-vs-EAPF-in-Python_Watermarked.9dea6e043766.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/python-lbyl-vs-eafp/">
+<h2 class="card-title h4 my-0 py-0">LBYL vs EAFP: Preventing or Handling Errors in Python</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">Jun 01, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/best-practices/" class="badge badge-light text-muted">best-practices</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/courses/data-cleaning-with-pandas-and-numpy/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Pythonic Data Cleaning With Pandas and NumPy" src="https://files.realpython.com/media/Pythonic-Data-Cleaning-With-Pandas_Watermarked.f9e9f439a6d6.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Pythonic-Data-Cleaning-With-Pandas_Watermarked.f9e9f439a6d6.jpg&amp;w=480&amp;sig=6fb48ef6fa917af515f0412c86427179d5a5d618 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Pythonic-Data-Cleaning-With-Pandas_Watermarked.f9e9f439a6d6.jpg&amp;w=960&amp;sig=fc664ec8411d244bea3dd1eb3d0682323e84fdad 960w, https://files.realpython.com/media/Pythonic-Data-Cleaning-With-Pandas_Watermarked.f9e9f439a6d6.jpg 1920w" sizes="25vw">
+<div class="card-img-overlay d-flex align-items-center">
+<div class="mx-auto">
+<span class="text-light" style="opacity: 0.90;"><i class="fa fa-4x fa-play " aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/courses/data-cleaning-with-pandas-and-numpy/">
+<h2 class="card-title h4 my-0 py-0">Data Cleaning With pandas and NumPy</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 31, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/data-science/" class="badge badge-light text-muted">data-science</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/python-news-may-2022/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Python Monthly News" src="https://files.realpython.com/media/Monthly-Python-News_Green_Watermarked.dfc38b44f855.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Monthly-Python-News_Green_Watermarked.dfc38b44f855.jpg&amp;w=480&amp;sig=7644691ea495688106c1bc2cb7f9c3f9993f92e5 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Monthly-Python-News_Green_Watermarked.dfc38b44f855.jpg&amp;w=960&amp;sig=53cdaab107a46d81b0c6b7a92a77de2551fb662b 960w, https://files.realpython.com/media/Monthly-Python-News_Green_Watermarked.dfc38b44f855.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/python-news-may-2022/">
+<h2 class="card-title h4 my-0 py-0">Python News: What&#x27;s New From May 2022</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 30, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/community/" class="badge badge-light text-muted">community</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/community-slack-guide/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Level Up Your Skills With the Real Python Slack Community" src="https://files.realpython.com/media/Community-Slack-Guide_Watermarked.118c3a036438.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Community-Slack-Guide_Watermarked.118c3a036438.jpg&amp;w=480&amp;sig=df97f8f2a995f8bbdc4fd7ea1acc2f20d12034e9 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Community-Slack-Guide_Watermarked.118c3a036438.jpg&amp;w=960&amp;sig=d7814e4dcd4ea39a66dccb9dc171ebdd25225db8 960w, https://files.realpython.com/media/Community-Slack-Guide_Watermarked.118c3a036438.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/community-slack-guide/">
+<h2 class="card-title h4 my-0 py-0">Level Up Your Skills With the Real Python Slack Community</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 25, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/best-practices/" class="badge badge-light text-muted">best-practices</a>
+<a href="/tutorials/community/" class="badge badge-light text-muted">community</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/courses/exploring-scopes-and-closures-in-python/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Exploring Scopes and Closures in Python" src="https://files.realpython.com/media/Scopes-and-Closure_Watermarked.0e1dee66c66c.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Scopes-and-Closure_Watermarked.0e1dee66c66c.jpg&amp;w=480&amp;sig=51b35119e3c42b1f542b93677af24d3720be7c1c 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Scopes-and-Closure_Watermarked.0e1dee66c66c.jpg&amp;w=960&amp;sig=0e9ab4f8d8ed7eab4c60731bdaede10dbdf89a59 960w, https://files.realpython.com/media/Scopes-and-Closure_Watermarked.0e1dee66c66c.jpg 1920w" sizes="25vw">
+<div class="card-img-overlay d-flex align-items-center">
+<div class="mx-auto">
+<span class="text-light" style="opacity: 0.90;"><i class="fa fa-4x fa-play " aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/courses/exploring-scopes-and-closures-in-python/">
+<h2 class="card-title h4 my-0 py-0">Exploring Scopes and Closures in Python</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 24, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/community/" class="badge badge-light text-muted">community</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/pypi-publish-python-package/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="How to Publish an Open-Source Python Package to PyPI" src="https://files.realpython.com/media/How-to-publish-an-open-source-Python-package-to-PyPI_Watermark.0f9c2da132aa.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/How-to-publish-an-open-source-Python-package-to-PyPI_Watermark.0f9c2da132aa.jpg&amp;w=480&amp;sig=aeff552d2d95cd366a87369ac9bdb15650cf6cac 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/How-to-publish-an-open-source-Python-package-to-PyPI_Watermark.0f9c2da132aa.jpg&amp;w=960&amp;sig=381c8b6b05005f46f17f9bba2514aebfcdfb98f8 960w, https://files.realpython.com/media/How-to-publish-an-open-source-Python-package-to-PyPI_Watermark.0f9c2da132aa.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/pypi-publish-python-package/">
+<h2 class="card-title h4 my-0 py-0">How to Publish an Open-Source Python Package to PyPI</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 23, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/best-practices/" class="badge badge-light text-muted">best-practices</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/tools/" class="badge badge-light text-muted">tools</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/build-a-python-url-shortener-with-fastapi/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Build a URL Shortener With FastAPI and Python" src="https://files.realpython.com/media/Build-a-URL-Shortener_Watermarked.b8dfdb666d42.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Build-a-URL-Shortener_Watermarked.b8dfdb666d42.jpg&amp;w=480&amp;sig=aff8a94a66cf73999d4764127d3718b2e332fac9 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Build-a-URL-Shortener_Watermarked.b8dfdb666d42.jpg&amp;w=960&amp;sig=a5bbfa5665b4c46b3dce5eb46ef44a778176b688 960w, https://files.realpython.com/media/Build-a-URL-Shortener_Watermarked.b8dfdb666d42.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/build-a-python-url-shortener-with-fastapi/">
+<h2 class="card-title h4 my-0 py-0">Build a URL Shortener With FastAPI and Python</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 18, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/api/" class="badge badge-light text-muted">api</a>
+<a href="/tutorials/databases/" class="badge badge-light text-muted">databases</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/projects/" class="badge badge-light text-muted">projects</a>
+<a href="/tutorials/web-dev/" class="badge badge-light text-muted">web-dev</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/courses/using-python-class-constructors/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Python Class Constructors: Control Your Object Instantiation" src="https://files.realpython.com/media/Python-Class-Constructors-and-Initializers-Guide_Watermarked.a0850d1b75d1.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Python-Class-Constructors-and-Initializers-Guide_Watermarked.a0850d1b75d1.jpg&amp;w=480&amp;sig=b089870d74a630a1f00fa7865f32ef05c12babba 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Python-Class-Constructors-and-Initializers-Guide_Watermarked.a0850d1b75d1.jpg&amp;w=960&amp;sig=dc1bae992d8e91420fa3d4dfad496974d6609b6b 960w, https://files.realpython.com/media/Python-Class-Constructors-and-Initializers-Guide_Watermarked.a0850d1b75d1.jpg 1920w" sizes="25vw">
+<div class="card-img-overlay d-flex align-items-center">
+<div class="mx-auto">
+<span class="text-light" style="opacity: 0.90;"><i class="fa fa-4x fa-play " aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/courses/using-python-class-constructors/">
+<h2 class="card-title h4 my-0 py-0">Using Python Class Constructors</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 17, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/linear-regression-in-python/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Linear Regression in Python" src="https://files.realpython.com/media/Linear-Regression-in-Python_Watermarked.479f82188ace.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Linear-Regression-in-Python_Watermarked.479f82188ace.jpg&amp;w=480&amp;sig=3be4751287a71577f0b247ddeb74eca56610f78d 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Linear-Regression-in-Python_Watermarked.479f82188ace.jpg&amp;w=960&amp;sig=e30f8718b654654a64fdd74e39a62aa507f06595 960w, https://files.realpython.com/media/Linear-Regression-in-Python_Watermarked.479f82188ace.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/linear-regression-in-python/">
+<h2 class="card-title h4 my-0 py-0">Linear Regression in Python</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 16, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/data-science/" class="badge badge-light text-muted">data-science</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/machine-learning/" class="badge badge-light text-muted">machine-learning</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="card border-0">
+<a href="/pandas-groupby/">
+<div class="embed-responsive embed-responsive-16by9">
+<img loading="lazy" class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="Pandas GroupBy: Your Guide to Grouping Data in Python" src="https://files.realpython.com/media/Grouping-and-Aggregating-Data-in-Pandas_Watermarked.d79eb1266abf.jpg" width="1920" height="1080" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Grouping-and-Aggregating-Data-in-Pandas_Watermarked.d79eb1266abf.jpg&amp;w=480&amp;sig=57585b747d47259e9b57d334e084e598ff9e35e9 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/Grouping-and-Aggregating-Data-in-Pandas_Watermarked.d79eb1266abf.jpg&amp;w=960&amp;sig=54206cfa21ebca8b68b7e45865d9720f955ed2b2 960w, https://files.realpython.com/media/Grouping-and-Aggregating-Data-in-Pandas_Watermarked.d79eb1266abf.jpg 1920w" sizes="25vw">
+</div>
+</a>
+<div class="card-body m-0 p-0 mt-2">
+<a class=" " href="/pandas-groupby/">
+<h2 class="card-title h4 my-0 py-0">pandas GroupBy: Your Guide to Grouping Data in Python</h2>
+</a>
+<p class="card-text">
+<small class="text-muted">
+<span class="mr-2">May 11, 2022</span>
+<span class="fa fa-tags" aria-hidden="true"></span>
+<a href="/tutorials/data-science/" class="badge badge-light text-muted">data-science</a>
+<a href="/tutorials/intermediate/" class="badge badge-light text-muted">intermediate</a>
+<a href="/tutorials/python/" class="badge badge-light text-muted">python</a>
+</small>
+</p>
+</div>
+</div>
+</div>
+<div class="w-100 text-center" id="frontpageLoadMore">
+<button class="btn btn-secondary btn-lg px-5 mb-5" hx-get="/api/v1/frontpage_tutorials/1652277600/?v2" hx-trigger="click" hx-target="#frontpageLoadMore" hx-swap="outerHTML" hx-ext="loading-states" data-loading-disable><i class="htmx-indicator fa fa-circle-o-notch fa-spin mx-1"></i>Load More </button>
+</div>
+<div class="col-12 col-lg-9 mx-auto my-0">
+<div class="d-flex mb-5">
+<form class="form-inline col p-0" action="/search" method="GET" id="home-search-form">
+<a class="js-search-form-submit position-absolute" href="/search" title="Search"><i class="fa fa-search fa-fw text-muted pl-2" aria-hidden="true"></i></a>
+<input class="form-control form-control-lg w-100" style="padding-left: 2rem;" maxlength=50 type="search" placeholder="Search Tutorials, Courses, Quizzes, Learning Paths&hellip;" aria-label="Search" name="q">
+<input type="hidden" name="_from" value="home">
+</form>
+<button class="ml-3 btn btn-primary col-3 d-none d-lg-block" style="max-width: 250px;" type="submit" form="home-search-form">Search&nbsp;»</button>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="container">
+<div class="mx-auto mt-4 mb-0" style="max-width: 768px;">
+<div style="display:block;position:relative;">
+<div style="display:block;width:100%;padding-top:12.5%;"></div>
+<div class="rpad rounded border" data-unit="8x1" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;"></div>
+</div>
+<a class="small text-muted" href="/account/join/" rel="nofollow"> <i class="fa fa-info-circle" aria-hidden="true"> </i> Remove ads</a>
+</div>
+<p class="text-center text-muted w-75 mx-auto">© 2012–2022 Real&nbsp;Python&nbsp;⋅ <a href="/newsletter/">Newsletter</a>&nbsp;⋅ <a href="/podcasts/rpp/">Podcast</a>&nbsp;⋅ <a href="https://www.youtube.com/realpython">YouTube</a>&nbsp;⋅ <a href="https://twitter.com/realpython">Twitter</a>&nbsp;⋅ <a href="https://facebook.com/LearnRealPython">Facebook</a>&nbsp;⋅ <a href="https://www.instagram.com/realpython/">Instagram</a>&nbsp;⋅ <a href="/">Python&nbsp;Tutorials</a>&nbsp;⋅ <a href="/search">Search</a>&nbsp;⋅ <a href="/privacy-policy/">Privacy Policy</a>&nbsp;⋅ <a href="/energy-policy/" class="text-success active">Energy Policy</a>&nbsp;⋅ <a href="/sponsorships/">Advertise</a>&nbsp;⋅ <a href="/contact/">Contact</a><br>❤️ Happy Pythoning!</p>
+</div>
+</footer>
+<script>
+      (function(document, history, location) {
+        var HISTORY_SUPPORT = !!(history && history.pushState);
+
+        var anchorScrolls = {
+          ANCHOR_REGEX: /^#[^ ]+$/,
+          OFFSET_HEIGHT_PX: 120,
+
+          /**
+           * Establish events, and fix initial scroll position if a hash is provided.
+           */
+          init: function() {
+            this.scrollToCurrent();
+            window.addEventListener('hashchange', this.scrollToCurrent.bind(this));
+            document.body.addEventListener('click', this.delegateAnchors.bind(this));
+          },
+
+          /**
+           * Return the offset amount to deduct from the normal scroll position.
+           * Modify as appropriate to allow for dynamic calculations
+           */
+          getFixedOffset: function() {
+            return this.OFFSET_HEIGHT_PX;
+          },
+
+          /**
+           * If the provided href is an anchor which resolves to an element on the
+           * page, scroll to it.
+           * @param  {String} href
+           * @return {Boolean} - Was the href an anchor.
+           */
+          scrollIfAnchor: function(href, pushToHistory) {
+            var match, rect, anchorOffset;
+
+            if(!this.ANCHOR_REGEX.test(href)) {
+              return false;
+            }
+
+            match = document.getElementById(href.slice(1));
+
+            if(match) {
+              rect = match.getBoundingClientRect();
+              anchorOffset = window.pageYOffset + rect.top - this.getFixedOffset();
+              window.scrollTo(window.pageXOffset, anchorOffset);
+
+              // Add the state to history as-per normal anchor links
+              if(HISTORY_SUPPORT && pushToHistory) {
+                history.pushState({}, document.title, location.pathname + href);
+              }
+            }
+
+            return !!match;
+          },
+
+          /**
+           * Attempt to scroll to the current location's hash.
+           */
+          scrollToCurrent: function() {
+            this.scrollIfAnchor(window.location.hash);
+          },
+
+          /**
+           * If the click event's target was an anchor, fix the scroll position.
+           */
+          delegateAnchors: function(e) {
+            var elem = e.target;
+
+            // 
+            if (elem.dataset.toggle === "tab") {
+              return;
+            }
+
+            if(
+              elem.nodeName === 'A' &&
+              this.scrollIfAnchor(elem.getAttribute('href'), true)
+            ) {
+              e.preventDefault();
+            }
+          }
+        };
+
+        window.addEventListener(
+          'DOMContentLoaded', anchorScrolls.init.bind(anchorScrolls)
+        );
+      })(window.document, window.history, window.location);
+    </script>
+<script>
+      (function() {
+        var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+        if (!isAndroid) {
+          return;
+        }
+
+        var styles = `
+        @font-face {
+          font-family: 'DejaVu Sans Mono';
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+          src: url('https://cdn.realpython.com/static/mfonts/dejavu-sans-mono.33f00225f915.woff2') format('woff2'),
+               url('https://cdn.realpython.com/static/mfonts/dejavu-sans-mono.0da77d3739f3.woff') format('woff'),
+               url('https://cdn.realpython.com/static/mfonts/dejavu-sans-mono.c2356fc49835.ttf') format('truetype');
+        }
+        code, kbd, pre, samp {
+          font-family: 'DejaVu Sans Mono', monospace;
+        }
+        `
+
+        var styleSheet = document.createElement("style")
+        styleSheet.type = "text/css"
+        styleSheet.innerText = styles
+        document.head.appendChild(styleSheet)
+      })();
+    </script>
+<script src="https://cdn.realpython.com/static/jquery.min.8fb8fee4fcc3.js"></script>
+<script src="https://cdn.realpython.com/static/popper.min.1022eaf388cc.js"></script>
+<script src="https://cdn.realpython.com/static/bootstrap.min.f0c2bcf5ef0c.js"></script>
+<script>
+    (function() {
+      document.querySelectorAll(".js-search-form-submit").forEach(function(el) {
+        el.addEventListener("click", function(e) {
+          e.preventDefault();
+          e.currentTarget.parentElement.submit();
+        })
+      });
+    })();
+    </script>
+<script src="https://cdn.realpython.com/static/frontend/reader/repl-toggle.925bef973b9c.js" async></script>
+<script src="https://cdn.realpython.com/static/frontend/reader/lightbox.49cdac39212e.js" async></script>
+<script src="https://cdn.realpython.com/static/frontend/reader/platforms-ui.b11202dc6079.js" async></script>
+<script>window.rp_prop_id = '58946116052';</script>
+<script src="https://srv.realpython.net/tag.js" async></script>
+<script src="https://cdn.realpython.com/static/frontend/vendor/htmx.2b5571cb1bed.js" async></script>
+<script>
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = '6214500';
+
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true;
+    dc.src = '//tag.getdrip.com/6214500.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+</script>
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2220911568135371');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2220911568135371&ev=PageView&noscript=1"
+/></noscript>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'71f5ffa8882e24b6',m:'pvrSTiFRozlChKVNjmC0kJZ37VOCCb2S_frSXlLn8s8-1655911548-0-AbQllyuUJz6QCtkafGDM/y2RasJbzbVOXgKnC8IbIT8MT2Xh278SXzhRm/G2O9JxRriTA7ON/ed8gLhobUQ5aTmP4InLDmJCPVk3Mjle/+zV62OIEjNQdq23S9nI0xRbzQHzdZ8+2SGQzYRostxOcXBdvKBdZjptIvuQLQFv4DBPAQlZWXF6gdd4ND9GHviO4wmOsg0t8jmeo3JVJ+4WOUNEKT3gEhjlgzATOZ3F1ZXBIdNoS+EZ80KLVpISpbMr836xaMVNNm+Umc8B0ARsluTxHoA/a14CU9pXbMlhJHj5B3X5FyvjbULvA1bL6IpT7nuLKYNzzyLSbopRGOIfOtwdgw75s7fV6PRzlg7SH9g+kT7zU/hOm27gxxTA/nlWdpe9X6eDfVzVS8G8Irz3hdvRkU/VKJtv3NH20OAGX1BZIP4/7BOybXyM1/xhtXSCwwZG/YzyJPkyL+GNI3g29UkwtU8iddKtO51ThkFOhbNeKlTcEZy/6FHDIGT3EVxpwfkJmmAhkOpMk+GN0n0LbRwuUjaa3ReKuuiEZKnDgchRD30/2RBFzyNMZRm7BiK1HMXahbjD9M2NL+Y/G82AfD2UUXeDVasEpX7OxjMIF5RiyBsNuagAQ7tEYN0+z5/Kp6ZIaZUSKa1flUe5g4wfgYthefz3shYEKBbrPZXvrvtdVFA5AfaR10MSSBUpKwzBN6FMPzQGMQwL8jPgjFlynQRt6pVT5FE7oVMo1NJGLVVpFmISc8+ObG/IWgaA8FMV60IJpbo3UAKbXV4NPOOHCwYdwctmp7KhsFgZJcL2AjWmoYqGvYiOCq+871RZUs/O31uJ/2JcdJrH6uDifZRUwCZKsdxhwZy3+y7tIpg1qPezxwc9LXyJse5YlYgOTap8YMzgCsBn7hMhKrWjghTw02/AxDkVgt0y2pDAe6yprFMbaFwvLFg923DFnGCcDvR4h+wYjho49Gcl2v2267rYVKMFYLc1X6c8rfnAJXRKPNayHxpTSPq1t76G59agK5iVLG+bCGMESWkK/3t75u72/+MYjY/uVvUX0ICjDRT4FFwyaAoxPzZb4K4fPS/FQ2FewVezWn3rfV98ht+3mbSVAWhBKj0Qp4sBnS7NTv+OnCIdWPZfeEw9cjPltnZEUrF6oxOisL9U2aRXsJ0Sz5FgLQfDUve4lpx3I90Mx0peOa+xfnGT7m4BehRBVXRbib2ni9PacuWebogWJPRsJONeApWH6icDIo5p6zqPh6XN6dKzlKCx8RMoGaZdUdhB3W8ZwlJio9L1zV0lRU55pZOOU8fmSbIeRFgMVhUeYlC249EMsoVfJtPMPSzfqUrFzpeQWVosSy/pODu1nSSUsR2iuMuJ2D0DdhjJqn1MFsjCscCqg6GP09B/2RZOUkBc0qbbI6TQ07xWL+1jieRfUrWYY4D6JnZTHTjKZI0somHqweIAocM3V/Kr5nNMFHhEOZTxrEK/V3sz1x8fd5xCorQDVJQgu25aTx03cJVcZCidjx2tJmH+fdWfZspy3Lf0l4iQ9eTR9g6oYMHnBPYGK2MncDfAePMB+bt4QQuLg166iBqY6e2yj4kg6/FqaYvu/prmqcnd2FKasWGIAbvaftAK2qZpRCUHJrASmT1sN0rSQ/CkXeqYobQjgIRmD8tFQKBotw==',s:[0xd46ad18cd3,0x546e1b151b],u:'/cdn-cgi/challenge-platform/h/g'}})();</script></body>
+</html>
